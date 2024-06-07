@@ -1,0 +1,109 @@
+include ../mixins\box-footer.pug
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="assets/css/style.css")
+		script(src="https://cdn.tailwindcss.com")
+		script(src="tailwind.config.js") 
+		block tieuDe
+	body(class="font-font1")
+		div(class=" bg-color1 text-center py-[10px]")
+			div(class="container mx-auto")
+				span(class="font-[400] text-[14px] text-[#FFFFFF]") Đăng ký để được giảm giá 20%.
+				a(href="#" class="text-[#FFFFFF] underline font-[500] text-[14px]") Đăng Ký Ngay
+		header(class="header pt-[22px] pb-[24px] sticky top-[0] bg-[white] z-[100]")
+			div(class="container")
+				div(class="flex items-center justify-between")
+					a(class="hidden lg:inline-block w-[24px] h-[24px]" href="")
+						i(class="fa-solid fa-bars text-color1 text-[18px]")
+					a(href="/" class="iconLogo font-[700] text-[32px] text-color1 lg:flex-1 ml-0 lg:ml-[16px]") 28.SHOP
+						img(src="", alt="")
+					nav(class="menu flex lg:hidden gap-[24px] ")
+						a(href="#" class="capitalize text-color1 font-[400]") Giới thiệu
+						a(href="#" class="capitalize text-color1") Sản phẩm
+						a(href="#" class="capitalize text-color1") bài viết
+						a(href="#" class="capitalize text-color1") Liên hệ
+					form(action="" target="" method="get" autocomplete="on" class="w-[40%] h-[48px] bg-[#F0F0F0] flex lg:hidden items-center rounded-[62px]") 
+						i(class="fa-solid fa-magnifying-glass text-[#969696] ml-[16px] mr-[12px]")
+						input(type="text" placeholder="Tìm kiếm sản phẩm..." class="bg-transparent w-full outline-none")
+					div(class="header__icon-right my-[12px]")
+						div(class="iconGioHang flex gap-[14px]")
+							a(href="" class="w-[24px] h-[24px] hidden lg:block")
+								i(class="fa-solid fa-magnifying-glass text-color1 text-[18px]")
+							a(href="" class="w-[24px] h-[24px]")
+								i(class="fa-regular fa-cart-shopping text-color1 text-[18px]")
+							a(href="" class="w-[24px] h-[24px]")
+								i(class="fa-regular fa-circle-user text-color1 text-[18px]")
+		
+		block main
+
+		footer(class="footer bg-[#0000001A] relative")
+			div(class="container")
+				div(class="pt-[50px] lg:pt-[40px]")
+					div(class="flex lg:flex-wrap max-gap-x-[103px] justify-between pb-[48px] lg:gap-y-[32px]")
+						div(class="w-[20%] lg:w-full flex flex-col mb-[8px]")
+							a(href="" class="text-color1 text-[33.45px] font-[700] leading-[42.32px]") 28.SHOP
+								img(src="", alt="")
+							div(class="text-[#00000099] mb-[35px] mt-[25px] lg:my-[20px]") Chúng tôi có những bộ quần áo phù hợp với phong cách của bạn và bạn có thể tự hào khi mặc.
+							div(class="flex items-center gap-x-[12px]")
+								a(href="", class="h-[28px] aspect-[28/28] bg-[white] rounded-full flex items-center justify-center border-[1px] border-color1/20")
+									i(class="fa-brands fa-twitter text-[12px] my-auto")
+								a(href="", class="w-[28px] h-[28px] bg-black rounded-full flex items-center justify-center")
+									i(class="fa-brands fa-facebook-f text-[white] text-[12px]")
+								a(href="", class="w-[28px] h-[28px] bg-[white] rounded-full flex items-center justify-center border-[1px] border-color1/20")
+									i(class="fa-brands fa-instagram text-[black] text-[14px]")
+						-
+							var boxheaders = [
+								{
+									title: 'công ty',
+									sub1: 'giới thiệu',
+									sub2: 'sản phẩm',
+									sub3: 'công việc',
+									sub4: 'việc làm'
+								},
+								{
+									title: 'trợ giúp',
+									sub1: 'hỗ trợ khách hàng',
+									sub2: 'thông tin đơn hàng',
+									sub3: 'điều khoản & điều kiện',
+									sub4: 'chính sách'
+								},
+								{
+									title: 'faq',
+									sub1: 'tài khoản',
+									sub2: 'quản lý đơn hàng',
+									sub3: 'đơn hàng',
+									sub4: 'thanh toán'
+								},
+								{
+									title: 'tài nguyên',
+									sub1: 'sách miễn phí',
+									sub2: 'bài viết',
+									sub3: 'kiến thức',
+									sub4: 'youtube'
+								}
+							];
+						each boxheader in boxheaders
+							+box-footer(
+								boxheader.title, 
+								boxheader.sub1, 
+								boxheader.sub2, 
+								boxheader.sub3, 
+								boxheader.sub4
+							)
+					div(class="border-[1px] border-color1/10")
+					div(class="pt-[30px] pb-[84px] sm:pb-[30.26px] flex justify-between md:flex-col items-center gap-[20px]")
+						div(class="font-[400] text-[14px] text-color1/60") 28.SHOP © 2024, All Rights Reserved
+						div(class="flex gap-[12px] h-[30px]")
+							div(class="bg-[#FFFFFF] rounded-[5.38px] h-full shadow-[0px 0.45px 4.48px 0px] shadow-[#B7B7B714] flex items-center justify-center w-[46.61px] border-[0.22px] border-[#D6DCE5]")
+								img(src="/project-3/assets/images/Visa.svg", alt="")
+							div(class="bg-[#FFFFFF] rounded-[5.38px] h-full shadow-[0px 0.45px 4.48px 0px] shadow-[#B7B7B714] flex items-center justify-center w-[46.61px] border-[0.22px] border-[#D6DCE5]")
+								img(src="/project-3/assets/images/Mastercard.svg", alt="")
+							div(class="bg-[#FFFFFF] rounded-[5.38px] h-full shadow-[0px 0.45px 4.48px 0px] shadow-[#B7B7B714] flex items-center justify-center w-[46.61px] border-[0.22px] border-[#D6DCE5]")
+								img(src="/project-3/assets/images/Paypal.svg", alt="")
+							div(class="bg-[#FFFFFF] rounded-[5.38px] h-full shadow-[0px 0.45px 4.48px 0px] shadow-[#B7B7B714] flex items-center justify-center w-[46.61px]  border-[0.22px] border-[#D6DCE5]")
+								img(src="/project-3/assets/images/ Pay.svg", alt="")
+							div(class="bg-[#FFFFFF] rounded-[5.38px] h-full shadow-[0px 0.45px 4.48px 0px] shadow-[#B7B7B714] flex items-center justify-center w-[46.61px] border-[0.22px] border-[#D6DCE5]")
+								img(src="/project-3/assets/images/G Pay.svg", alt="")

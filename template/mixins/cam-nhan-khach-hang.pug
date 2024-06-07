@@ -1,0 +1,13 @@
+mixin cam-nhan(title, sub)
+	div(class="rounded-[20px] border-[1px] border py-[28px] x-[32px] p-[24px]")
+		div(class="text-color1 mb-[15px] md:mb-[12px] flex flex-wrap items-center")
+			div(class="text-[#FFC633] opacity-[100%] flex gap-[6.49px]")
+				i(class="fa-solid fa-star")
+				i(class="fa-solid fa-star")
+				i(class="fa-solid fa-star")
+				i(class="fa-solid fa-star")
+				i(class="fa-solid fa-star")
+		div(class="flex items-center mb-[12px] md:mb-[8px]")
+			div(class="name font-[700] text-color1 text-[20px] md:text-[16px] leading-[22px] capitalize") #{title}
+			<i class="fa-solid fa-circle-check text-[#01AB31] ml-[6.25px]"></i>
+		div(class="text-color1/60 font-[400] text-[16px] md:text-[14px] leading-[22px] line-clamp-[5] text-justify") "#{sub}"

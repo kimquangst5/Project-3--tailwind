@@ -1,0 +1,252 @@
+extends layouts/default.pug
+include mixins/thoi-trang-moi.pug
+include mixins/box-footer.pug
+include mixins/cam-nhan-khach-hang.pug
+include mixins/box-section-1.pug
+include mixins/danhmuc-noi-bat.pug
+
+block tieuDe
+	title Kim Quang 
+
+block main
+	div(class="section-1 bg-color3")
+		div(class="container")
+			div(class="flex items-center flex-wrap justify-between lg:flex-col ")
+				div(class="w-[50%] z-10 lg:w-full")
+					h1(class="uppercase text-color1 font-[900] sm:font-[700] text-[48px] xl2:text-[46px] xl:text-[38px] sm:text-[28px] mb-[30px] lg:mb-[20px] lg:mt-[40px] sm:leading-[34px] ") chuyên THỜI trang PHONG CÁCH, HIỆN ĐẠI
+					div(class="text-color1/60 font-[400] text-[16px] xl:text-[13.5px] sm:text-[14px] leading-[22px] mb-[50px] lg:mb-[30px]") Chúng tôi chuyên cung cấp nhiều loại quần áo được chế tác tỉ mỉ, được thiết kế để làm nổi bật cá tính của bạn và đáp ứng phong cách của bạn.
+					button(class="capitalize bg-color1 rounded-[62px] py-[16px] px-[54px] text-color2 font-[500] text-[16px] leading-[20.24px] mb-[50px] lg:mb-[30px] lg:w-full") Xem ngay
+					div(class="flex lg:flex-wrap gap-[32px] xl:gap-[26px] lg:gap-[10px] lg:justify-between lg:items-center")
+						-
+							var boxheaders = [
+								{
+									'title': '200+',
+									'sub': 'thương hiệu'
+								},
+								{
+									'className': 'border-[1px] border-color1/10 lg:hidden'
+								},
+								{
+									'title': '2,000+',
+									'sub': 'Sản Phẩm Chất Lượng'
+								},
+								{
+									'className': 'border-[1px] border-color1/10 lg:hidden'
+								},
+								{
+									'title': '30,000+',
+									'sub': 'Khách Hàng'
+								}
+							];
+						each boxheader in boxheaders
+							+section-1(boxheader.className, boxheader.title, boxheader.sub)
+				div(class="w-[48%] lg:w-full h-full pt-[40px] mt-auto")
+					img(src="assets/images/Rectangle 2.png", alt="" class=" object-cover bottom ml-auto mr-auto")
+	div(class="section 2 bg-color1 ")
+		div(class="container")
+			div(class="w-full py-[45px] xl:pt-[41px] xl:pb-[30px] flex flex-wrap justify-center gap-x-[60px] lg:gap-x-[34px] lg:gap-y-[28px]")
+				-
+					var section2s = [
+						{
+							image: 'assets/images/section-2-p-1.svg',
+						},
+						{
+							image: 'assets/images/section-2-p-2.svg',
+						},
+						{
+							image: 'assets/images/section-2-p-3.svg',
+						},
+						{
+							image: 'assets/images/section-2-p-4.svg',
+						},
+						{
+							image: 'assets/images/section-2-p-5.svg',
+						}
+					];
+				each section2 in section2s
+					img(src=section2.image, alt="" class="w-auto max-h-[36px] sm:max-h-[21px]")  
+				
+	div(class="section-3")
+		div(class="container")
+			div(class="pt-[62px] pb-[64px] lg:py-[40px] border-b-[1px] border-b-[#0000001A]")
+				div(class="uppercase text-center text-color1 font-[700] text-[48px] sm:text-[32px] leading-[60.72px] mb-[32px]") Thời trang mới
+				div(class="flex grid grid-cols-4 lg:grid-cols-2 gap-[20px] ")
+					-
+						var fashions = [
+							{
+								image: 'assets/images/section-3.-bg-1.png',
+								title: 'áo thun đơn giản',
+								price: '120.000đ',
+								giaCu: '',
+								percent: ''
+							},
+							{
+								image: 'assets/images/section-3.-bg-2.png',
+								title: 'quần jean nam phong Cách',
+								price: '120.000đ',
+								giaCu: '600.000đ',
+								percent: '-20%'
+							},
+							{
+								image: 'assets/images/section-3.-bg-3.png',
+								title: 'quần jean nam phong Cách',
+								price: '120.000đ',
+								giaCu: '',
+								percent: ''
+							},
+							{
+								image: 'assets/images/section-3.-bg-4.png',
+								title: 'áo thun đen sọc cam',
+								price: '120.000đ',
+								giaCu: '600.000đ',
+								percent: '-20%'
+							}
+						];
+					each fashion in fashions
+						+item-thoi-trang(
+							fashion.image, 
+							fashion.title, 
+							fashion.price, 
+							fashion.giaCu, 
+							fashion.percent
+						)
+				button(class="block mx-auto capitalize text-color1 font-[500] text-[16px] leading-[20.24px] py-[16px] px-[54px] border-[1px] border-[#0000001A] rounded-[62px] mt-[40px]") xem tất cả
+	div(class="section-4")
+		div(class="container")
+			div(class="pt-[62px] pb-[76px] lg:py-[40px]")
+				div(class="uppercase text-center text-color1 font-[700] text-[48px] sm:text-[32px]  leading-[60.72px] mb-[54px] lg:mb-[32px]") giảm giá nhiều
+				div(class="flex grid grid-cols-4 lg:grid-cols-2 gap-[20px] ")
+					-
+						var fashions = [
+							{
+								image: 'assets/images/section-4.-bg-1.png',
+								title: 'quần jean nam phong Cách',
+								price: '120.000đ',
+								giaCu: '',
+								percent: ''
+							},
+							{
+								image: 'assets/images/section-4.-bg-2.png',
+								title: 'quần jean nam phong Cách',
+								price: '120.000đ',
+								giaCu: '600.000đ',
+								percent: '-20%'
+							},
+							{
+								image: 'assets/images/section-4.-bg-3.png',
+								title: 'quần jean nam phong Cách',
+								price: '120.000đ',
+								giaCu: '',
+								percent: ''
+							},
+							{
+								image: 'assets/images/section-4.-bg-4.png',
+								title: 'áo thun đen sọc cam',
+								price: '120.000đ',
+								giaCu: '600.000đ',
+								percent: '-20%'
+							}
+						];
+					each fashion in fashions
+						+item-thoi-trang(
+							fashion.image, 
+							fashion.title, 
+							fashion.price, 
+							fashion.giaCu, 
+							fashion.percent
+						)
+				button(class="block mx-auto capitalize text-color1 font-[500] text-[16px] leading-[20.24px] py-[16px] px-[54px] border-[1px] border-[#0000001A] rounded-[62px] mt-[40px]") xem tất cả
+	
+	div(class="section-5 ")
+		div(class="container")
+			div(class="bg-[#F0F0F0] rounded-[40px] py-[70px] xl:py-[28px] px-[64px] xl:px-[24px] sm:flex sm:flex-col" )  
+				div(class="text-color1 font-[700] text-[48px] sm:text-[32px] text-center uppercase mb-[60px] xl:mb-[16px]") danh mục nổi bật
+				div(class="grid grid-cols-3 lg:grid-cols-1 gap-[20px] lg:gap-x-[0px] lg:gap-y-[20px]")
+					-
+						var danhMucnoiBats = [
+							{
+								'link': '#',
+								'title': 'đơn giản',
+								'image': 'assets/images/image 11.png',
+								'className': '',
+								'image2': 'assets/images/image 15.png'
+							},
+							{
+								'link': '#',
+								'title': 'lịch lãm',
+								'image': 'assets/images/image 12.png',
+								'className': 'col-span-2',
+								'image2': 'assets/images/image 16.png'
+							},
+							{
+								'link': '#',
+								'title': 'dạ hội',
+								'image': 'assets/images/image 13.png',
+								'className': 'col-span-2',
+								'image2': 'assets/images/image 17.png'
+							},
+							{
+								'link': '#',
+								'title': 'gym',
+								'image': 'assets/images/image 14.png',
+								'className': '',
+								'image2': 'assets/images/image 18.png'
+							}
+						];
+					each item in danhMucnoiBats
+						+danhMuc(
+							item.link, 
+							item.title, 
+							item.image, 
+							item.className,
+							item.image2
+						)
+				
+				//-div(class="flex lg:gap-[20px] gap-[16px] grid xl:grid-cols-3 grid-cols-1")
+					//-div(class="item bg-[white] rounded-[20px] relative xl:col-span-1 col-span-3 lg:h-[289px] md:h-[280px] sm:h-[200px] h-[190px] truncate ")
+					//-	div(class="capitalize font-[700] sm:text-[36px] text-[24px] leading-[45.54px] text-color1 top-[26px] left-[36px] absolute bg-transparent z-[1]") Đơn Giản
+					//-	img(src="/project-3/assets/images/section-5-bg-1.png", alt="" class="absolute right-[0px] transform transition-all -scale-x-125 scale-y-125 duration-1000 translate-x-[40%] -translate-y-[3%]")
+					//-div(class="item bg-[white] rounded-[20px] relative xl:col-span-2 col-span-3 lg:h-[289px] md:h-[280px] sm:h-[200px] h-[190px]  truncate")
+					//-	div(class="capitalize font-[700] sm:text-[36px] text-[24px]  leading-[45.54px] text-color1 top-[26px] left-[36px] absolute bg-transparent z-[1]") lịch lãm
+					//-	img(src="/project-3/assets/images/section-5-bg-2.png", alt="" class="absolute right-[0px] transform transition-all md:scale-125 scale-150  duration-1000 md:translate-x-[10%] sm:translate-x-[27%] translate-x-[30%] md:-translate-y-[8%] sm:-translate-y-[0%]") 
+					//-div(class="item bg-[white] rounded-[20px] relative xl:col-span-2 col-span-3  lg:h-[289px] md:h-[280px] sm:h-[200px] h-[190px]  truncate")
+					//-	div(class="capitalize font-[700] sm:text-[36px] text-[24px]  leading-[45.54px] text-color1 top-[26px] left-[36px] absolute bg-transparent z-[1]") dạ hội
+					//-	img(src="/project-3/assets/images/section-5-bg-3.png", alt="" class="absolute w-full transform transition-all duration-700 sm:translate-x-[10%] translate-x-[15%] -translate-y-[18%] scale-[1.3]") 
+					//-div(class="item bg-[white] rounded-[20px] relative xl:col-span-1 col-span-3 lg:h-[289px] md:h-[280px] sm:h-[200px] h-[190px] truncate")
+					//-	div(class="capitalize font-[700] sm:text-[36px] text-[24px]  leading-[45.54px] text-color1 top-[26px] left-[36px] absolute  bg-transparent z-[1]") gym
+					//-	img(src="/project-3/assets/images/section-5-bg-4.png", alt="" class="absolute w-4/5 right-[0px] transform transition-all duration-1000 xl:scale-125 sm:scale-x-[1.3] sm:scale-y-[0.9] scale-x-[1.5] scale-y-[1] sm:translate-x-[9%] translate-x-[18%] xl:-translate-y-[14%] sm:-translate-y-[23%] -translate-y-[20%]") 
+	div(class="section-6 pt-[86px] md:pt-[40px] pb-[80px] md:pb-[61px]")
+		div(class="container")
+			div(class="text-color1 uppercase font-[700] text-[48px] lg:text-[32px] lg:leading-[36px] mb-[38px]") cảm nhận của khách hàng
+			div(class="flex flex-wrap grid grid-cols-3 xl:grid-cols-1 gap-[20px]")
+				-
+					var camNhanKhachHangs = [
+						{
+							title: 'trần kim quang',
+							sub: 'Tôi rất ngạc nhiên trước chất lượng và kiểu dáng của những bộ quần áo từ 28.SHOP. Từ trang phục thường ngày đến trang phục thanh lịch, mọi món đồ tôi mua đều vượt quá sự mong đợi của tôi.'
+						},
+						{
+							title: 'huỳnh như',
+							sub: 'Việc tìm kiếm quần áo phù hợp với phong cách cá nhân của tôi từng là một thử thách cho đến khi tôi khám phá ra 28.SHOP. Hàng loạt lựa chọn mà họ cung cấp thực sự đáng chú ý.'
+						},
+						{
+							title: 'trần xuân lộc',
+							sub: 'Là một người luôn tìm kiếm những món đồ thời trang độc đáo, tôi rất vui khi tình cờ biết đến 28.SHOP. Việc lựa chọn quần áo không chỉ đa dạng mà còn bắt kịp xu hướng mới nhất.'
+						}
+					];
+				each camNhanKhachHang in camNhanKhachHangs
+					+cam-nhan(
+						camNhanKhachHang.title,
+						camNhanKhachHang.sub
+					)
+	div(class="section-7 bg-section7")
+		div(class="container")
+			div(class="bg-color1 py-[36px] xl:py-[24px] px-[64px] xl:px-[32px] rounded-[20px] flex flex-wrap justify-between items-center")
+				h3(class="max-w-[620px] xl:max-w-full uppercase text-[white] font-[700] text-[40px] md:text-[30px] leading-[54px] md:leading-[44px] xl:mb-[20px]") cập nhật về ưu đãi mới nhất của chúng tôi
+				form(action="https://www.w3schools.com/action_page.php?" target="_blank" method="get" autocomplete="on" class="w-[35%] flex flex-col gap-[14px] xl:gap-[12px] xl:w-full")
+					div(class="bg-[white] py-[12px] px-[16px] rounded-[62px] flex items-center gap-[12px]")
+						i(class="fa-solid fa-envelope text-color1/40")
+						input(type="email" id="email" name="email" placeholder="Nhập email của bạn..." class="w-full bg-transparent outline-none")
+					button(class="w-full font-[500] text-[16px] capitalize py-[12px] px-[16px] bg-[white] text-color1 rounded-[62px]") đăng ký nhận tin
+
+	script(src="assets/js/style.js") 	

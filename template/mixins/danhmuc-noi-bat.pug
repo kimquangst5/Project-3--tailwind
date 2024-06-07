@@ -1,0 +1,6 @@
+mixin danhMuc(link, title, image, className, image2)
+	div(class=("rounded-[20px] bg-[white] overflow-hidden h-[289px] lg:h-auto lg:aspect-[310/190]" + " " + className)) 
+		a(href=link, class="w-full relative")
+			h3(class="absolute top-[26px] sm:top-[17px] left-[36px] sm:left-[24px] capitalize font-[700] text-[36px] sm:text-[24px] text-color1") #{title}
+			img(src=image, alt=title class="lg:hidden object-cover h-full")
+			img(src=image2, alt=title class="hidden lg:block object-cover lg:w-full")
